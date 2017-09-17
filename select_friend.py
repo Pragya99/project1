@@ -21,5 +21,5 @@ counter = counter + 1
  # ask user which friend he wants to select to chat with
      result = int(raw_input(colored("\nSelect from the list : ", 'magenta')))
 # result the selected friend to perform action
-    return result - 1 
+    return result - 1
 
