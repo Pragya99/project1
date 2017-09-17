@@ -47,7 +47,6 @@ elif (existing.upper() == "N"):
      start_chat(spy.name, spy.age, spy.rating, spy.is_online)
  else:
       print "Invalid name. Try again."
- else:
-   print "Wrong choice. Try again."
+
 
 
