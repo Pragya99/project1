@@ -2,9 +2,6 @@
 from spy_details import spy
 from globals import STATUS_MESSAGES, current_status_message
 
-# importing termcolor colorful output
-from termcolor import colored
-
 # function to add status
 def add_status(current_status_message):
 
@@ -23,7 +20,7 @@ def add_status(current_status_message):
          # when spy wants to add another status rather than existing one
          # .upper() converts everything to uppercase
          if default.upper() == "N":
-             new_status_message = raw_input(colored("What status message do you want to set?: ", 'cyan'))
+             new_status_message = raw_input("What status message do you want to set?: ", 'cyan'))
 
         # validating users input.
          if len(new_status_message) > 0:
@@ -47,7 +44,7 @@ for message in STATUS_MESSAGES:
     item_position = item_position + 1
 
     # asking users choice which index of list he wants to choose
-    message_selection = int(raw_input(colored("\nChoose from the Index of status: ", 'cyan')))
+    message_selection = int(raw_input("\nChoose from the Index of status: ", 'cyan')))
 
     # validating users input and set status of choice if exist.
     if len(STATUS_MESSAGES) >= message_selection:
