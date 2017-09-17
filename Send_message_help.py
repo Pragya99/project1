@@ -14,7 +14,7 @@
      new_chat = ChatMessage(text, True)
 
 # adding the message to friend in emergency
-     friends[friends_choice].chats.append(new_chat) 
+     friends[friends_choice].chats.append(new_chat)
 
 
 
