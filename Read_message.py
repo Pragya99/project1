@@ -84,7 +84,7 @@ else:
             print (colored('Sorry! Invalid entry. We can\'t validate your input and output\n ', 'blue'))
             print (colored('The convention to follow is: \n ', 'blue'))
             print (colored('1. Encrypted should ends with (.jpg) format.\n ', 'blue'))
-            print (colored('Keep in mind and Try Again\n\n ', 'blue')) 
+            print (colored('Keep in mind and Try Again\n\n ', 'blue'))
 
 
 
