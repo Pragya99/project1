@@ -1,13 +1,13 @@
 # importing spy details and start chat
-from spy_details import spy
-from start_chat import  start_chat
+ from spy_details import spy
+ from start_chat import  start_chat
 
 #Importing termcolor to get output colorful
-from termcolor import colored
+ from termcolor import colored
 
 #Start greeting
 print (colored("\nHello!, Guys.","Green"))
-print "Let's get started!\n
+print "Let's get started!"
 
 #Ask the spy to continue as default spy  or create new spy
 question = "Do you want to continue as " + spy.salutation + " " + spy.name + " (Y/N): "
@@ -45,7 +45,7 @@ elif (existing.upper() == "N"):
      spy.is_online = True
      # starting chat application.
      start_chat(spy.name, spy.age, spy.rating, spy.is_online)
- else:
+  else:
       print "Invalid name. Try again."
 
 
