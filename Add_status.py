@@ -15,7 +15,7 @@ def add_status(current_status_message):
          print 'You don\'t have any status message currently \n'
 
     # Ask user for choose default status or an old status.
-         default = raw_input(colored("Do you want to select from the older status (y/n)? ", 'cyan'))
+         default = raw_input("Do you want to select from the older status (y/n)? ", 'cyan'))
 
          # when spy wants to add another status rather than existing one
          # .upper() converts everything to uppercase
