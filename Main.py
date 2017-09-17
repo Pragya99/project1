@@ -48,5 +48,5 @@ elif (existing.upper() == "N"):
  else:
       print "Invalid name. Try again."
  else:
-   print "Wrong choice. Try again." 
+   print "Wrong choice. Try again."
 
