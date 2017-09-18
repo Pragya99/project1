@@ -24,7 +24,7 @@
           self.sent_by_me = sent_by_me
 
 # details of default user.
-   spy = Spy('pragya', 'Ms.', 20, 4.5)
+   spy = Spy('Pragya', 'Ms.', 20, 4.5)
 
 # details of some existing friends
    friend_one = Spy('Anchal, ', 'Ms.', 19, 4.8)
@@ -32,7 +32,7 @@
    friend_three = Spy('Puja, ', 'Ms.',20, 4.7)
 
 # lists of existing friends
-   friends = [friend_one, friend_two, friend_three] 
+   friends = [friend_one, friend_two, friend_three]
 
 
 
