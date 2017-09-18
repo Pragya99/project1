@@ -1,22 +1,22 @@
 # importing friend, steganography library, and datetime
- from select_friend import select_friend
- from steganography.steganography import Steganography
- from spy_details import friends
- from send_message_help import send_message_help
- from spy_details import ChatMessage
+from select_friend import select_friend
+from steganography.steganography import Steganography
+from Spy_details import friends
+from Send_message_help import send_message_help
+from Spy_details import ChatMessage
 
 # importing regular expressions for proper validation
- import re
+import re
 
 # importing termcolor and colorama for colorful output.
- from termcolor import colored
- from colorama import init
+from termcolor import colored
+from colorama import init
 
 # initializing colorama
- init()
+init()
 
 # function for read message
- def read_message():
+def read_message():
       # choose friend from the list to communicate
  sender = select_friend()
 
@@ -24,20 +24,22 @@ encrypted_image = raw_input("Provide encrypted image : ")
 pattern_e = '^[a-zA-Z]+\.jpg$'
 
 # error handling if secret message is present or not
-     try:
+try:
  secret_message = Steganography.decode(encrypted_image)
-        print "The secret message is ",
-        print (colored(secret_message, 'red'))
-        words = secret_message.split()
+except TypeError:
+        print(colored("This image has no secret message. No decoding. Aah!"))
+print "The secret message is",
+print (colored(secret_message, 'red'))
+words = secret_message.split()
 
 # converting text into upper case
-        new = (secret_message.upper()).split()
+new = (secret_message.upper()).split()
 
 # controlling the words spoken by spy in every message received.
-        friends[sender].count += len(words)
+friends[sender].count += len(words)
 
  # if Emergency words present\
-        if "SOS" in new or "SAVE" in new or "HELP" in new or "ACCIDENT" in new or "ALERT" in new:
+if "SOS" in new or "SAVE" in new or "HELP" in new or "ACCIDENT" in new or "ALERT" in new:
 
  # Emergency alert
         # Termcolor and Colorama both libraries happily used.
@@ -46,15 +48,15 @@ pattern_e = '^[a-zA-Z]+\.jpg$'
         print (colored("!", 'pink', 'on_orange'))
 
  # help friend by sending a helping message
-         print (colored("The friend who sent this message need your help.", 'cyan'))
-         print (colored("You can help your friend by sending helping message.", 'cyan'))
-         print (colored("Select the friend to send helping message", 'red'))
+        print (colored("The friend who sent this message need your help.", 'cyan'))
+        print (colored("You can help your friend by sending helping message.", 'cyan'))
+        print (colored("Select the friend to send helping message", 'red'))
 
  # calling the send message help function
-         send_message_help()
+        send_message_help()
 
 # the message has been sent successfully
-         print (colored("You just sent a message to help your friend.", 'magenta'))
+        print (colored("You just sent a message to help your friend.", 'magenta'))
 
 # add the chat to sender
 new_chat = ChatMessage(secret_message, False)
@@ -68,17 +70,16 @@ print " is ",
 print (colored(friends[sender].count, 'blue'))
 
  # delete a spy if he speaks too much
-         if(len(words)>100):
-         print (colored(friends[sender].name, 'grey')),
- print (colored(" removed from friends list. He was out of his mind, huh!.", 'yellow'))
+if(len(words)>100):
+            print (colored(friends[sender].name, 'grey')),
+            print (colored(" removed from friends list. He was out of his mind, huh!.", 'yellow'))
 # remove that chatterbox friend.
-        friends.remove(friends[sender])
+            friends.remove(friends[sender])
 
-except TypeError:
-        print(colored("This image has no secret message. No decoding. Aah!"))
 
- # users input validations
-         if (re.match(pattern_e, encrypted_image) != None):
+
+ # users input validation
+if (re.match(pattern_e, encrypted_image) != None):
             print (colored('All perfect', 'red'))
 else:
             print (colored('Sorry! Invalid entry. We can\'t validate your input and output\n ', 'blue'))

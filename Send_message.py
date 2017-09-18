@@ -1,17 +1,17 @@
 # importing existing friend, steganography library, and datetime.
- from select_friend import select_friend
- from steganography.steganography import Steganography
- from datetime import datetime
- from spy_details import friends, ChatMessage
+from select_friend import select_friend
+from steganography.steganography import Steganography
+from datetime import datetime
+from spy_details import friends, ChatMessage
 
 #importing regular expression for proper validation
- import re
+import re
 
 # importing termcolor for colorful output.
- from termcolor import colored
+from termcolor import colored
 
 # function to send a secret message.
- def send_message():
+def send_message():
 
  # choose a friend from the list to communicate
     friend_choice = select_friend()
@@ -25,9 +25,9 @@
     pattern_o = '^[a-zA-Z]+\.jpg$'
 
  # write the secret message
-     text = raw_input("Enter your message here : ")
-     # Encrypt the message using Steganography library
-     Steganography.encode(original_image, output_image, text)
+    text = raw_input("Enter your message here : ")
+    # Encrypt the message using Steganography library
+    Steganography.encode(original_image, output_image, text)
  # the message will be stored in chat message class
     new_chat = ChatMessage(text, True)
 
@@ -38,7 +38,7 @@
     print (colored("Your message encrypted successfully.", 'red'))
 
 # save the messages
-     new_chat = {
+    new_chat = {
     'message': text,
     'time': datetime.now(),
     'sent_by_me': True
@@ -51,12 +51,12 @@ print (colored("your secret message is ready.", 'yellow'))
 
 # users input validations
 if (re.match(pattern_i, original_image) != None and re.match(pattern_o, output_image) != None):
-print (colored('All perfect', 'red'))
+    print (colored('All perfect', 'red'))
 else:
-print (colored('Sorry! Invalid entry. We can\'t validate your input and output\n ', 'blue'))
-print (colored('The convention to follow is: \n ', 'blue'))
-print (colored('1. Input should ends with (.jpg) format.\n ', 'blue'))
-print (colored('2. Output should also ends with (.jpg) format.\n ', 'blue'))
+    print (colored('Sorry! Invalid entry. We can\'t validate your input and output\n ', 'blue'))
+    print (colored('The convention to follow is: \n ', 'blue'))
+    print (colored('1. Input should ends with (.jpg) format.\n ', 'blue'))
+    print (colored('2. Output should also ends with (.jpg) format.\n ', 'blue'))
 print (colored('Keep in mind and Try Again\n\n ', 'blue'))
 
 

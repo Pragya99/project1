@@ -1,9 +1,9 @@
 # importing spy details and start chat
- from spy_details import spy
- from start_chat import  start_chat
+from spy_details import spy
+from start_chat import  start_chat
 
 #Importing termcolor to get output colorful
- from termcolor import colored
+from termcolor import colored
 
 #Start greeting
 print (colored("\nHello!, Guys.","Green"))
@@ -20,7 +20,7 @@ if (existing.upper() == "Y") :
   # concatination of salutation and name of spy.
   spy_name = spy.salutation + " " + spy.name
 
-  # starting chat application.
+  # starting chat application
   start_chat(spy.name, spy.age, spy.rating, spy.is_online)
 elif (existing.upper() == "N"):
   # user wants to continue as new user
