@@ -1,5 +1,5 @@
 # importing spy and existing friends
-from spy_details import Spy, friends
+from Spy_details import Spy, friends
 # importing regular expressions for proper validation
 import re
 
@@ -13,8 +13,8 @@ def add_friend():
 
 # ask user for name and salutation of friend
     new_friend.name = raw_input("Please add your friend's name: ")
-     pattern_n = '^[a-zA-Z\s]+s'
-6666666666666666666666666644444
+    pattern_n = '^[a-zA-Z\s]+s'
+
     new_friend.salutation= raw_input("What to call Mr. or Ms.?: ")
     pattern_s = '^[a-zA-Z\s]+s'
 # concatination for full name
@@ -29,21 +29,21 @@ def add_friend():
     pattern_r = '^[0-9]+\.[0-9]+$'
 
 # users input validations
-    if len(new_friend.name) > 0 and new_friend.name.isdigit() == False and re.match(pattern_n,new_friend.name)!=None and re.match(pattern_s,new
+    if len(new_friend.name) > 0 and new_friend.name.isdigit() == False and re.match(pattern_n,new_friend.name)!=None and re.match(pattern_s,new_friend.append(new_friend)):
+        
+        print (colored('Friend Added!', 'magenta'))
 
 # add friend if conditions satisfies
-     friends.append(new_friend)
-     print (colored('Friend Added!', 'magenta'))
-     else:
-    print (colored('Sorry! Invalid entry. We can\'t add spy with the details you provided\n ', 'blue'))
-print (colored('The convention to follow is: \n ', 'blue'))
-print (colored('1. Name can be alphabets only.\n ', 'blue'))
-print (colored('2. Age can be digits only blue'))
-print (colored('3. Do not use (.) after salutation, it can be alphabets only too.\n ', 'blue'))
-print (colored('Keep in mind and Try Again\n\n ', 'blue'))
+    else:
+        print colored('Sorry! Invalid entry. We can\'t add spy with the details you provided\n ', 'blue')
+        print colored('The convention to follow is: \n ', 'blue')
+        print colored('1. Name can be alphabets only.\n ', 'blue')
+        print colored('2. Age can be digits only blue')
+        print colored('3. Do not use (.) after salutation, it can be alphabets only too.\n ', 'blue')
+        print colored('Keep in mind and Try Again\n\n ', 'blue')
 
-# returning total no of friends.
-return len(friends)
+# returning total no of friends .
+    return len(friends)
 
 
 
